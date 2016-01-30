@@ -43,6 +43,7 @@ def deleteItem(hash, item)
 end
 #...Update inventory item name
 def updateItemName(hash, item, new_name)
+	hash[new_name.to_sym] = hash.delete(item.to_sym)
 end
 #...Select and view and item
 #def viewItem(hash, item)
