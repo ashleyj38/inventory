@@ -20,8 +20,8 @@ def viewInventory(hash)
 end 
 #...Update inventory item number
 def updateItemNo(hash, item, new_number)
-	hash[item] = new_number
-	puts viewInventory
+	hash[item.to_sym] = new_number
+	puts viewInventory(hash)
 end
 #...Add Inventory Item
 def addItem(hash, item_name, item_number)
@@ -81,7 +81,9 @@ until continue == "no" do #Start Loop
 	elsif (taskChoice == 4)
 		puts "Please enter the name of the inventory item you would like to update"
 		item_name = gets.chomp
-		updateItemNo(inventory, item_name)
+		puts "Please enter the new inventory amount"
+		item_number = gets.chomp.to_i
+		updateItemNo(inventory, item_name, item_number)
 	else
 		puts "Please enter the name of the inventory item you would like to change"
 		item_name = gets.chomp
