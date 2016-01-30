@@ -25,6 +25,8 @@ def updateItemNo(hash, item, new_number)
 end
 #...Add Inventory Item
 def addItem(hash, item_name, item_number)
+	hash[item_name.to_sym] = item_number
+	puts viewInventory(hash)
 end 
 #...Delete inventory item
 def deleteItem(hash, item)
