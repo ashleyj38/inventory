@@ -14,6 +14,9 @@
 #Define methods
 #...View the inventory
 def viewInventory(hash)
+	hash.each do |key, value|
+		puts "#{key}, #{value}"
+	end
 end 
 #...Update inventory item number
 def updateItemNo(hash, item, new_number)
@@ -34,7 +37,10 @@ end
 
 #Define variables
 continue = "yes"
-inventory = {}
+inventory = {
+	brownies: 24,
+	cookies: 100
+}
 #taskChoice = 0
 validOptions = [1,2,3,4,5]
 
@@ -54,6 +60,7 @@ until continue == "no" do #Start Loop
 		taskChoice = gets.chomp.to_i
 	end
 
+	#puts inventory
 	puts viewInventory(inventory)
 
 	#If/#lse conditions
