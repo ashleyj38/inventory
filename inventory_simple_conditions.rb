@@ -25,6 +25,15 @@ def updateItemNo(hash, item, new_number)
 end
 #...Add Inventory Item
 def addItem(hash, item_name, item_number)
+	if hash.include?(item_name.to_sym)
+		puts "This item already exists. Would you like to update the current inventory? Y or N"
+		response = gets.chomp
+		if response.upcase == "Y"
+			updateItemNo(hash, item_name, item_number)
+		else
+			return
+		end
+	end
 	hash[item_name.to_sym] = item_number
 	puts viewInventory(hash)
 end 
