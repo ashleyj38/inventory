@@ -39,6 +39,7 @@ def addItem(hash, item_name, item_number)
 end 
 #...Delete inventory item
 def deleteItem(hash, item)
+	hash.delete(item.to_sym)
 end
 #...Update inventory item name
 def updateItemName(hash, item, new_name)
