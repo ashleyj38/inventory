@@ -20,6 +20,8 @@ def viewInventory(hash)
 end 
 #...Update inventory item number
 def updateItemNo(hash, item, new_number)
+	hash[item] = new_number
+	puts viewInventory
 end
 #...Add Inventory Item
 def addItem(hash, item_name, item_number)
